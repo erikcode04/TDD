@@ -1,13 +1,23 @@
 import type { BlogPostFormData } from "../../types/bitkrets";
 
 export function validateBlogPostFormData(formData: BlogPostFormData) {
+  // Guard: Check if formData exists
+  if (!formData || typeof formData !== "object") {
+    return false;
+  }
+
   const blogTitle = formData.blogTitle;
   const blogText = formData.blogText;
-  if (typeof blogTitle === "string" || typeof blogText === "string") {
-    if (blogTitle.length > 0 && blogText.length > 0) {
-      return true;
-    }
+
+  // Guard: Check if both fields are strings
+  if (typeof blogTitle !== "string" || typeof blogText !== "string") {
+    return false;
   }
+
+  if (blogTitle.length > 0 && blogText.length > 0) {
+    return true;
+  }
+
   return false;
 }
 

@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-
+//ändrage lite i denna fil för att kunna köra tester i både backend och frontend
 export default defineConfig(({ mode }) => {
   let input;
   let output;
@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
   }
   return {
     test: {
-      include: ["./tests/unit/*.{test,spec}.?(c|m)[jt]s?(x)"],
+      include: ["./tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"],
     },
     build: {
       rollupOptions: {
