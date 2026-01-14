@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-//ändrage lite i denna fil för att kunna köra tester i både backend och frontend
+
 export default defineConfig(({ mode }) => {
   let input;
   let output;
