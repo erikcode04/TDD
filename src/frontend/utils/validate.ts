@@ -14,7 +14,11 @@ export function validateBlogPostFormData(formData: BlogPostFormData) {
     return false;
   }
 
-  if (blogTitle.length > 0 && blogText.length > 0) {
+  // Trim whitespace and check length
+  const trimmedTitle = blogTitle.trim();
+  const trimmedText = blogText.trim();
+
+  if (trimmedTitle.length > 0 && trimmedText.length > 0) {
     return true;
   }
 
