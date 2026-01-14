@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => {
   return {
     test: {
       include: ["./tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"],
+      exclude: ["./tests/e2e/**", "**/node_modules/**"],
     },
     build: {
       rollupOptions: {

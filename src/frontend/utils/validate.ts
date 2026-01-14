@@ -18,11 +18,17 @@ export function validateBlogPostFormData(formData: BlogPostFormData) {
   const trimmedTitle = blogTitle.trim();
   const trimmedText = blogText.trim();
 
-  if (trimmedTitle.length > 0 && trimmedText.length > 0) {
-    return true;
+  // Check minimum length (at least 2 characters)
+  if (trimmedTitle.length < 2 || trimmedText.length < 2) {
+    return false;
   }
 
-  return false;
+  // Check maximum length (title: 200, text: 10000)
+  if (trimmedTitle.length > 200 || trimmedText.length > 10000) {
+    return false;
+  }
+
+  return true;
 }
 
 export function validateEmailAddressStructure(emailAddress: string) {
